@@ -1,0 +1,36 @@
+<?php $pages = $this->yellow->content->top() ?>
+<?php $this->yellow->page->setLastModified($pages->getModified()) ?>
+<div class="nav_body nav_body_left">
+    <?php foreach ($pages as $page): ?>
+    <div class="<?php echo $page->isActive() ? 'nav_parent nav_active' : 'nav_parent' ?>">      
+        <a class="nav_item" href="<?php echo $page->getLocation(true) ?>"><?php echo $page->getHtml("titleNavigation") ?></a>
+    </div>
+    <?php endforeach ?> 
+    <div class="follow">
+        <a href="https://github.com/#" target="_blank" rel="noopener">
+          <svg class="icon">
+        <use xlink:href="#github"></use>
+      </svg>
+        </a>
+        <a href="https://twitter.com/#" target="_blank" rel="noopener">
+          <svg class="icon">
+        <use xlink:href="#twitter"></use>
+      </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/#" target="_blank" rel="noopener">
+          <svg class="icon">
+        <use xlink:href="#linkedin"></use>
+      </svg>
+        </a>
+          
+        <a href="http://localhost:1313/index.xml">
+          <svg class="icon">
+        <use xlink:href="#rss"></use>
+      </svg>
+        </a>
+      <div class="color_mode">
+        <input type="checkbox" class="color_choice" id="mode">
+      </div>    
+    </div>
+</div>
+
