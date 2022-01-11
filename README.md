@@ -1,4 +1,4 @@
-# Clarity 0.8.2
+# Clarity 0.8.3
 
 Clarity is a theme ported from [Hugo](https://github.com/chipzoller/hugo-clarity).
 
