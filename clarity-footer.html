@@ -4,7 +4,7 @@
             <img src="<?php echo $this->yellow->page->getBase(true) ?>/media/themes/clarity.png" class="icon icon_2 transparent" alt="Clarity">
             <p>Copyright&nbsp;<span class="year"><?php echo date("Y") ?></span>&nbsp;CLARITY. All Rights Reserved
                 &nbsp;
-                <a class="button" href="<?php echo $this->yellow->page->getUrl() ?>edit/">Admin</a>
+                <a class="button" href="<?php if ($this->yellow->page->getBase()) { echo "".$this->yellow->page->getBase()."/edit".$this->yellow->page->getLocation().""; } else { echo "/edit".$this->yellow->page->getLocation().""; } ?>">Admin</a>
             </p>
         </div>
     </div>

@@ -21,7 +21,7 @@
     <section class="sidebar_inner">
       <!-- Search -->
       <div>
-      <form class="search-form" action="/search/" method="post">
+      <form class="search-form" action="<?php echo $this->yellow->page->getBase() ?>/search/" method="post">
         <div class="search_wrapper">
             <input class="search_input" type="text" name="query" value="<?php echo $this->yellow->page->getRequestHtml("query") ?>"<?php echo $this->yellow->page->get("status")=="none" ? " autofocus=\"autofocus\"" : "" ?> />
             <button type="submit" class="search_btn"><svg class="icon search_btn" style="width: 36px;height: 30px;"><use xlink:href="#search"></use></svg></button>
@@ -57,7 +57,7 @@
                 uksort($tags, "strnatcasecmp");
                 $output .= "<ul>\n";
                 foreach ($tags as $key=>$value) {
-                  $output .= "<a href=\"/blog/tag=".$key."/\" class=\"post_tag button button_translucent\">".$key."<span class=\"button_tally\">".$value."</span></a>";
+                  $output .= "<a href=\"".$this->yellow->page->getBase()."/blog/".$this->yellow->toolbox->normaliseArguments("tag:$key")." \" class=\"post_tag button button_translucent\">".$key."<span class=\"button_tally\">".$value."</span></a>";
                 }
                 $output .= "\n";
               }
