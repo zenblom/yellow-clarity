@@ -48,23 +48,23 @@
                                 <?php $page = $this->yellow->page ?>
                                 <div class="pure-u-1-24" style="text-align: left; width: 4.1667%;">
                                     <?php if ($pages->getPageNext($page)): ?>
-                                    <a href="<?php echo $pages->getPageNext($page)->getLocation() ?>"><svg class="icon rotate-270" style="fill: #0077b8;"><use xlink:href="#arrow"></use></svg></a>
+                                    <a href="<?php echo $pages->getPageNext($page)->getBase().$pages->getPageNext($page)->getLocation() ?>"><svg class="icon rotate-270" style="fill: #0077b8;"><use xlink:href="#arrow"></use></svg></a>
                                     <?php endif ?>
                                 </div>
                                 <div class="pure-u-10-24" style="width: 41.6667%;">
                                     <?php if ($pages->getPageNext($page)): ?>
-                                    <a href="<?php echo $pages->getPageNext($page)->getLocation() ?>"><?php echo $pages->getPageNext($page)->getHtml("title") ?></a>
+                                    <a href="<?php echo $pages->getPageNext($page)->getBase().$pages->getPageNext($page)->getLocation() ?>"><?php echo $pages->getPageNext($page)->getHtml("title") ?></a>
                                     <?php endif ?>
                                 </div>
                                 <div class="pure-u-2-24" style="width: 8.3333%;">&nbsp;</div>
                                 <div class="pure-u-10-24" style="text-align: right; width: 41.6667%">
                                     <?php if ($pages->getPagePrevious($page)): ?>
-                                    <a href="<?php echo $pages->getPagePrevious($page)->getLocation() ?>"><?php echo $pages->getPagePrevious($page)->getHtml("title") ?></a>
+                                    <a href="<?php echo $pages->getPagePrevious($page)->getBase().$pages->getPagePrevious($page)->getLocation() ?>"><?php echo $pages->getPagePrevious($page)->getHtml("title") ?></a>
                                     <?php endif ?>
                                 </div>
                                 <div class="pure-u-1-24" style="text-align: right; width: 4.1667%;">
                                     <?php if ($pages->getPagePrevious($page)): ?>
-                                    <a href="<?php echo $pages->getPagePrevious($page)->getLocation() ?>"><svg class="icon rotate-90" style="fill: #0077b8;"><use xlink:href="#arrow"></use></svg></a>
+                                    <a href="<?php echo $pages->getPagePrevious($page)->getBase().$pages->getPagePrevious($page)->getLocation() ?>"><svg class="icon rotate-90" style="fill: #0077b8;"><use xlink:href="#arrow"></use></svg></a>
                                     <?php endif ?>
                                 </div>
                             </div>
