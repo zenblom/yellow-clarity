@@ -3,20 +3,21 @@
 <div class="nav_body nav_body_left">
     <?php foreach ($pages as $page): ?>
     <div class="<?php echo $page->isActive() ? 'nav_parent nav_active' : 'nav_parent' ?>">
-        <a class="nav_item" href="<?php echo $page->getLocation(true) ?>"><?php echo $page->getHtml("titleNavigation") ?></a>
         <?php
         $children = $page->getChildren($showInvisible = false);
-        //if (($this->yellow->page->getParent()) AND (count($children)==0)) { $children = $this->yellow->page->getSiblings($showInvisible = false); }
         if (count($children) AND ($page->get('layout') != 'blog-start')) {
-          $output = '<div class="nav_sub"><span class="nav_child"></span>';
+          $output = "<a class=\"nav_item\" href=\"".$page->getLocation(true)."\">".$page->getHtml("titleNavigation")."<span><svg class=\"icon nav_icon\"><use xlink:href=\"#caret\"></use></svg></span></a>";
+          $output .= '<div class="nav_sub"><span class="nav_child"></span>';
           foreach ($children as $child) {
             $title = $child->get("titleNavigation");
             $curr = $child->isActive() ? ' class="active" aria-current="page"' : '';
             $output .= '<a class="nav_child nav_item" ' . $curr . 'href="' . $child->getLocation(true) . '">' . htmlspecialchars($title) . '</a>';
           }
           $output .= '</div>';
-          echo $output;
+        } else {
+            $output = "<a class=\"nav_item\" href=\"".$page->getLocation(true)."\">".$page->getHtml("titleNavigation")."</a>";
         }
+        echo $output;
         ?>
     </div>
     <?php endforeach ?> 

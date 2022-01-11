@@ -441,8 +441,9 @@ p {
 }
 
 .nav_icon {
-    width: 0.7rem;
-    margin-left: 0.33rem;
+    width: 0.7rem !important;
+    margin-left: 0.33rem !important;
+    margin-right: 0 !important;
     transition: transform 0.3s var(--ease);
     transform-origin: 50% 50%
 }
